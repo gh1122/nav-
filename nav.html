@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./nav.css">
+    <title>Document</title>
+    <style>
+        .content{
+            padding:800px;
+            background:rgba(0,0,0,.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="nav"></div>
+    <div class="content"></div>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jqueryui/1.10.3/jquery.ui.widget.min.js"></script>
+    <script src="http://mockjs.com/dist/mock.js"></script>
+    <script>
+        Mock.mock('http://g.cn',{
+            'array':[
+                {name:'es1',href:'http://www.baidu.com'},
+                {name:'es2',href:'#1'},
+                {name:'es3',href:'#2'},
+                {name:'es4',href:'#3'},
+                {name:'es5',href:'#4'},
+                {name:'es6',href:'#5'},
+                {name:'es7',href:'#6'},
+                {name:'es8',href:'#7'},
+            ]
+        });
+    </script>
+    <script src="./nav.js"></script>
+    <script>
+        //实例化nav
+        $('.nav').nav();
+        $('.nav').nav('init','http://g.cn');
+    </script>
+</body>
+</html>
